@@ -1,0 +1,11 @@
+input:focus {
+  background-color: yellow;
+}
+
+form {
+  text-align: center;
+  line-height: 20px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
