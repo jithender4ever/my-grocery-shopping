@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/SearchBar.css';
-import addItem from '../actions/index';
+import { addItem } from '../actions/index';
 import { connect } from 'react-redux';
 
 class SearchBar extends Component {

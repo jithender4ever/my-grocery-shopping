@@ -1,23 +1,19 @@
 import { combineReducers } from 'redux';
-import ADD_ITEM from '../actions/index';
+//import ADD_ITEM from '../actions/index';
 
-const itemIs = (state, action) => {
-  switch (action.type) {
-  case ADD_ITEM:
-    return {
-      item: action.payload
-    };
-  default:
-      return state;
-  }
+const INITIAL_STATE = {
+  items: []
 };
 
-const items = (state = null, action) => {
+const itemsReducer = (state = INITIAL_STATE, action) => {
+  console.log('in reducer: ', action);
+  console.log('in reducer state: ', state);
+
   switch (action.type) {
-    case ADD_ITEM:
+    case "ADD_ITEM":
       return {
         ...state,
-        item: action.payload
+        items: [...state.items, {itemId: state.items.length, itemName: action.payload}]
       };
     default:
       return state;
@@ -25,7 +21,7 @@ const items = (state = null, action) => {
 };
 
 const reducers = combineReducers({
-  items
+  itemsReducer
 });
 
 export default reducers;
